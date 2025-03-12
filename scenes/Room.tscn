@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://t6ehulay5fi7"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_4gqaw"]
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_bh61p"]
+
+[node name="Room" type="StaticBody3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(9.99929, 0, 0, 0, 9.99929, 0, 0, 0, 9.99929, 0, 0, 0)
+mesh = SubResource("PlaneMesh_4gqaw")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("WorldBoundaryShape3D_bh61p")

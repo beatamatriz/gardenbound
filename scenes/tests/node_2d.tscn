@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://bhb8o5ywcrlek"]
+
+[ext_resource type="Texture2D" uid="uid://0ltemvwwsrcq" path="res://assets/9izLRXB9T-2831927986.jpg" id="1_6idxx"]
+[ext_resource type="PackedScene" uid="uid://c1e56bdcri2n6" path="res://scenes/JulyBot/JulyBot.tscn" id="2_ugg5r"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="9IzLrxb9t-2831927986" type="Sprite2D" parent="."]
+texture = ExtResource("1_6idxx")
+
+[node name="JulyBot" parent="." instance=ExtResource("2_ugg5r")]
+
+[node name="Camera2D" type="Camera2D" parent="."]
