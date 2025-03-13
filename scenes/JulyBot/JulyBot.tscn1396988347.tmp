@@ -26,3 +26,4 @@ one_shot = true
 [node name="Code" type="Node2D" parent="."]
 
 [connection signal="timeout" from="RunOffset" to="." method="_on_run_offset_timeout"]
+[connection signal="timeout" from="Wait" to="." method="_on_wait_timeout"]

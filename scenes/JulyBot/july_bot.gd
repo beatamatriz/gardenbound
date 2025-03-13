@@ -3,90 +3,113 @@ extends CharacterBody2D
 @export var GRID_SNAP = 160
 @export var SPEED = 5.0
 
+
+var functions: Dictionary # I need to clear this in each run
+
 func _ready() -> void:
-	$Timer.start()
+	$RunOffset.start()
 
-func parse(code_string):
-	var code_block: Array[Instruction]
-	for line in code_string:
-		if line[0] == "for":
-			code_block.append(For.new(callable_for, parse(line[1]), line[2], line[3], line[4]))
-		#
-		#elif line[0] == "while":
-			#code_block.append(While.new(callable_while, parse(line[1]), line[2]))
-		#
-		elif line[0] == "water":
-			code_block.append(Instruction.new(callable_water))
-		elif line[0] == "left":
-			code_block.append(Instruction.new(callable_move_left))
-		elif line[0] == "right":
-			code_block.append(Instruction.new(callable_move_right))
-		elif line[0] == "up":
-			code_block.append(Instruction.new(callable_move_up))
-		elif line[0] == "down":
-			code_block.append(Instruction.new(callable_move_down))
-	return code_block
+func callable_if(condition: Instruction, then_code_block: Array[Instruction], else_code_block: Array[Instruction]) -> void:
+	if await condition.execute():
+		for line in then_code_block:
+			await line.execute()
+	else:
+		for line in else_code_block:
+			await line.execute()
 
-func callable_move_left(executed_signal: Signal):
-	for n in range(0, 32, 1):
-		position.x -= SPEED
-	await get_tree().create_timer(1.0).timeout
-	executed_signal.emit()
-	
-func callable_move_right(executed_signal: Signal):
-	for n in range(0, 32, 1):
-		print("right", n)
-		position.x += SPEED
-	await get_tree().create_timer(1.0).timeout
-	executed_signal.emit()
-	
-func callable_move_up(executed_signal: Signal):
-	for n in range(0, 32, 1):
-		position.y -= SPEED
-	await get_tree().create_timer(1.0).timeout
-	executed_signal.emit()
-	
-func callable_move_down(executed_signal: Signal):
-	for n in range(0, 32, 1):
-		print("down", n)
-		position.y += SPEED
-	await get_tree().create_timer(1.0).timeout
-	executed_signal.emit()
-	
-func callable_water(executed_signal: Signal):
-	print("water")
-	await get_tree().create_timer(1.0).timeout
-	executed_signal.emit()
-
-func callable_for(executed_signal: Signal, code_block: Array[Instruction], start: int, end: int, increment: int):
+func callable_for(start: int, end: int, increment: int,code_block: Array[Instruction]) -> void:
 	for n in range(start, end, increment):
 		for line in code_block:
-			line.execute()
-			await line.executed
-	executed_signal.emit()
-		
-func callable_while(executed_signal: Signal, code_block: Array[Instruction], condition: bool):
-	while(condition):
+			await line.execute()
+
+func callable_while(code_block: Array[Instruction], condition: Instruction) -> void:
+	while(await condition.execute()):
 		for line in code_block:
-			line.execute()
-			await line.executed
-	executed_signal.emit()
+			await line.execute()
 
-func callable_function(executed_signal: Signal, code_block: Array[Instruction]):
+func callable_function(parameters: Array, code_block: Array[Instruction]) -> void:
 	for line in code_block:
-		line.execute()
-		await line.executed
-	executed_signal.emit()
+		await line.execute()
 
-func run_code():
+# Atomic Instructions
+func callable_move_left(parameters) -> void:
+	print("moving left")
+	for n in range(0, 32, 1):
+		position.x -= SPEED
+func callable_move_right(parameters) -> void:
+	print("moving right")
+	for n in range(0, 32, 1):
+		position.x += SPEED
+func callable_move_up(parameters) -> void:
+	print("moving up")
+	for n in range(0, 32, 1):
+		position.y -= SPEED
+func callable_move_down(parameters) -> void:
+	print("moving down")
+	for n in range(0, 32, 1):
+		position.y += SPEED
+	
+func callable_water(parameters) -> void:
+	print("water")
+
+func callable_wait(parameters) -> void:
+	$Wait.start(parameters[0])
+	print("waiting ", parameters[0], " seconds")
+	await $Wait.timeout
+
+func callable_is_on_white(parameters) -> bool:
+	return snappedi(position.x, 160)/160 % 2 == 0 and snappedi(position.y, 160)/160 % 2 == 0
+
+# Pseudo Compiler
+func parse(code_string: Array) -> Array[Instruction]:
+	var code_block: Array[Instruction]
+	for line in code_string:
+		if line[0] == "function_define":
+			functions.get_or_add(line[1], [line[2], line[3]])
+		elif line[0] == "function_call":
+			pass # Vamos a no preocuparnos ahora mismo
+		elif line[0] == "if":
+			code_block.append(If.new(callable_if, parse(line[1])[0], parse(line[2]), parse(line[3])))
+		elif line[0] == "for":
+			code_block.append(For.new(callable_for, line[1], line[2], line[3], parse(line[4])))
+		elif line[0] == "while":
+			code_block.append(While.new(callable_while, parse(line[1])[0], parse(line[2])))
+		elif line[0] == "water":
+			code_block.append(Instruction.new(callable_water,[]))
+		elif line[0] == "move_left":
+			code_block.append(Instruction.new(callable_move_left, []))
+		elif line[0] == "move_right":
+			code_block.append(Instruction.new(callable_move_right, []))
+		elif line[0] == "move_up":
+			code_block.append(Instruction.new(callable_move_up, []))
+		elif line[0] == "move_down":
+			code_block.append(Instruction.new(callable_move_down, []))
+		elif line[0] == "wait":
+			code_block.append(Instruction.new(callable_wait, [line[1]]))
+		elif line[0] == "is_on_white":
+			code_block.append(Instruction.new(callable_is_on_white, []))
+			
+	return code_block
+
+func run_code() -> void:
 	print("compiling...")
-	var code_block = parse([["for", [["right"]], 0, 3, 1],["water"],
-		["for", [["up"]], 0, 2, 1], ["for", [["left"]], 0, 4, 1]])
-	var code = Fuction.new(callable_function, code_block)
+	var code_block = parse(
+	[
+	["for", 0, 3, 1,
+	[
+		["water"],
+		["wait", 3]
+	]
+	],
+	["move_right"],
+	["wait", 3],
+	["move_left"]
+	]
+	)
+	var code = Function.new(callable_function, [], code_block)
 	print("executing...")
-	code.execute()
-	await code.executed
+	await code.execute()
 	print("done")
 
-func _on_timer_timeout():
+func _on_run_offset_timeout() -> void:
 	run_code()
