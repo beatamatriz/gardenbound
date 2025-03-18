@@ -69,11 +69,11 @@ func parse(code_string: Array) -> Array[Instruction]:
 		elif line[0] == "function_call":
 			pass # Vamos a no preocuparnos ahora mismo
 		elif line[0] == "if":
-			code_block.append(If.new(callable_if, parse(line[1])[0], parse(line[2]), parse(line[3])))
+			code_block.append(If.new(callable_if, parse([line[1]])[0], parse(line[2]), parse(line[3])))
 		elif line[0] == "for":
 			code_block.append(For.new(callable_for, line[1], line[2], line[3], parse(line[4])))
 		elif line[0] == "while":
-			code_block.append(While.new(callable_while, parse(line[1])[0], parse(line[2])))
+			code_block.append(While.new(callable_while, parse([line[1]])[0], parse(line[2])))
 		elif line[0] == "water":
 			code_block.append(Instruction.new(callable_water,[]))
 		elif line[0] == "move_left":
@@ -94,19 +94,19 @@ func parse(code_string: Array) -> Array[Instruction]:
 func run_code() -> void:
 	print("compiling...")
 	var code_block = parse(
+	[["while", ["is_on_white"],
 	[
-	["for", 0, 3, 1,
-	[
-		["water"],
-		["wait", 3]
-	]
-	],
-	["move_right"],
-	["wait", 3],
-	["move_left"]
-	]
+		["move_right"],
+		["wait", 1],
+		["move_up"],
+		["wait", 1],
+		["move_left"],
+		["wait", 1],
+		["move_down"],
+		["wait", 1]
+	]]]
 	)
-	var code = Function.new(callable_function, [], code_block)
+	var code = Function.new(callable_function, code_block)
 	print("executing...")
 	await code.execute()
 	print("done")

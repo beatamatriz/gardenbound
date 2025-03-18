@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://c1e56bdcri2n6"]
 
-[ext_resource type="Script" uid="uid://dnojp6jgi1lm2" path="res://scenes/JulyBot/july_bot.gd" id="1_674eb"]
-[ext_resource type="Texture2D" uid="uid://daqkhg44ufumy" path="res://assets/JadeSheet.png" id="2_uopt7"]
+[ext_resource type="Script" uid="uid://dnojp6jgi1lm2" path="res://scenes/july_bot/july_bot.gd" id="1_674eb"]
+[ext_resource type="Texture2D" uid="uid://daqkhg44ufumy" path="res://assets/placeholders/JadeSheet.png" id="2_uopt7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bgjn5"]
 size = Vector2(100, 91)

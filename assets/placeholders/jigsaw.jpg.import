@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://daqkhg44ufumy"
-path="res://.godot/imported/JadeSheet.png-cd1244150b7e2184c0fbe2e30d726e00.ctex"
+uid="uid://c0ydjcvnfn7lx"
+path="res://.godot/imported/jigsaw.jpg-b69a31dd8171ace8dda8e7724d36260c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/JadeSheet.png"
-dest_files=["res://.godot/imported/JadeSheet.png-cd1244150b7e2184c0fbe2e30d726e00.ctex"]
+source_file="res://assets/placeholders/jigsaw.jpg"
+dest_files=["res://.godot/imported/jigsaw.jpg-b69a31dd8171ace8dda8e7724d36260c.ctex"]
 
 [params]
 

@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://cqhy63qx33x8r"]
+
+[ext_resource type="Script" uid="uid://dlioh7tgj6fku" path="res://scenes/tests/another_block.gd" id="1_wyt0d"]
+
+[node name="AnotherBlock" type="Node2D"]
+script = ExtResource("1_wyt0d")
+
+[node name="Button" type="StaticBody2D" parent="."]
+
+[node name="Area" type="CollisionPolygon2D" parent="Button"]
+polygon = PackedVector2Array(71, -1, 78, 18, 90, 3)
+
+[node name="Sprite" type="Sprite2D" parent="Button"]
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+visible = false

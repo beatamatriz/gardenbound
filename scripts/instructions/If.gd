@@ -12,4 +12,4 @@ func _init(_instruction: Callable, _condition: Instruction, _if_code_block: Arra
 	self.else_code_block = _else_code_block
 
 func execute():
-	return await instruction.call(parameters, code_block, else_code_block)
+	return await instruction.call(condition, code_block, else_code_block)

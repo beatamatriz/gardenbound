@@ -1,13 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://b6uce2347eonj"]
-
-[ext_resource type="Script" uid="uid://dcd3qlngd8qe2" path="res://scenes/July/july.gd" id="1_7igiu"]
+[gd_scene load_steps=3 format=3 uid="uid://b6uce2347eonj"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_hflc6"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_7igiu"]
 
 [node name="July" type="CharacterBody3D"]
-script = ExtResource("1_7igiu")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("CapsuleMesh_hflc6")

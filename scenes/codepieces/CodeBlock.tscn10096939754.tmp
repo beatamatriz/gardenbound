@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://vvq0sakyignu"]
+
+[ext_resource type="Script" uid="uid://crvykyqkegin" path="res://scenes/codepieces/code_block.gd" id="1_nhv1y"]
+[ext_resource type="Texture2D" uid="uid://ce7ilgx0uxwp6" path="res://assets/placeholders/block.png" id="2_20fwp"]
+
+[node name="CodeBlock" type="Button"]
+offset_right = 8.0
+offset_bottom = 8.0
+script = ExtResource("1_nhv1y")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("2_20fwp")
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

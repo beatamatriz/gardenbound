@@ -14,17 +14,16 @@ var success_offset = 35
 var locked = false
 
 func _process(delta: float) -> void:
-	if get_parent().get_parent().get_parent().active:
-		if(locked):
-			return
-			
-		if (clickable and !dragging and Input.is_action_just_pressed("click")):
-			start_drag()
-			
-		if dragging:
-			$Area.global_position = get_global_mouse_position() + dragging_offset
-			if(Input.is_action_just_released("click")):
-				drop()
+	if(locked):
+		return
+		
+	if (clickable and !dragging and Input.is_action_just_pressed("click")):
+		start_drag()
+		
+	if dragging:
+		$Area.global_position = get_global_mouse_position() + dragging_offset
+		if(Input.is_action_just_released("click")):
+			drop()
 		
 func start_drag():
 	$pickup.play()

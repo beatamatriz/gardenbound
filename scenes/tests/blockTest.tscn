@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://bchwkp6cahcaa"]
+
+[ext_resource type="Texture2D" uid="uid://ce7ilgx0uxwp6" path="res://assets/placeholders/block.png" id="1_orgna"]
+[ext_resource type="Texture2D" uid="uid://8fn4rxu1j42a" path="res://assets/placeholders/pressed.png" id="2_00j5n"]
+
+[node name="BlockTest" type="TextureButton"]
+texture_normal = ExtResource("1_orgna")
+texture_pressed = ExtResource("2_00j5n")
