@@ -1,0 +1,52 @@
+[gd_scene load_steps=10 format=3 uid="uid://bvtivtxhge6bd"]
+
+[ext_resource type="PackedScene" uid="uid://b6uce2347eonj" path="res://scenes/July/July.tscn" id="2_ngsr2"]
+[ext_resource type="PackedScene" uid="uid://p0734hu433hb" path="res://assets/FBX_files/Desk.fbx" id="2_usfa5"]
+[ext_resource type="PackedScene" uid="uid://d3xvm3xenugiy" path="res://assets/FBX_files/Gaming Chair.fbx" id="3_2ut1t"]
+[ext_resource type="PackedScene" uid="uid://5wwm42on1css" path="res://assets/FBX_files/Gaming Keyboard.fbx" id="4_ptyhn"]
+[ext_resource type="PackedScene" uid="uid://wycek7ansbqf" path="res://assets/FBX_files/Gaming Screen.fbx" id="5_5hndp"]
+[ext_resource type="PackedScene" uid="uid://ctbtss21y303k" path="res://assets/FBX_files/Big Mouse.fbx" id="6_wviyc"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_qhgoc"]
+sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+ground_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+
+[sub_resource type="Sky" id="Sky_ngsr2"]
+sky_material = SubResource("ProceduralSkyMaterial_qhgoc")
+
+[sub_resource type="Environment" id="Environment_avlw3"]
+background_mode = 2
+sky = SubResource("Sky_ngsr2")
+tonemap_mode = 2
+glow_enabled = true
+
+[node name="Room" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, -0.134194, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_avlw3")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+use_collision = true
+size = Vector3(17, 0.001, 15)
+
+[node name="July" parent="." instance=ExtResource("2_ngsr2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0481138, 0.0518107, 0.147948)
+
+[node name="Desk" parent="." instance=ExtResource("2_usfa5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.50678, 0.536155, -4.06801)
+
+[node name="Gaming Chair" parent="." instance=ExtResource("3_2ut1t")]
+transform = Transform3D(-0.877916, 0, 0.478814, 0, 1, 0, -0.478814, 0, -0.877916, 1.11836, 0.683058, -3.02259)
+
+[node name="Gaming Keyboard" parent="." instance=ExtResource("4_ptyhn")]
+transform = Transform3D(-0.99268, 0, -0.120778, 0, 1, 0, 0.120778, 0, -0.99268, 1.27393, 0.793727, -3.78462)
+
+[node name="Gaming Screen" parent="." instance=ExtResource("5_5hndp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.50218, 1.12428, -4.11664)
+
+[node name="Big Mouse" parent="." instance=ExtResource("6_wviyc")]
+transform = Transform3D(-0.963835, 0, 0.266498, 0, 1, 0, -0.266498, 0, -0.963835, 2.00112, 0.851876, -3.79124)

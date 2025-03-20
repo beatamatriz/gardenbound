@@ -1,0 +1,12 @@
+18/03
+	- GDC
+	- Assets gratuitos y arte
+	
+	Notas:
+	- Unity asset store
+	- StoryBoard (tutorial, niveles y final)
+	- Investigar el estado del arte (añadir en overleaf)
+		- Scratch
+		- 
+	- Interfaz + Prototipo del primer nivel
+	- Ir completando memoria con fotos y explicaciones
