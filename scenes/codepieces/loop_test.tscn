@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3 uid="uid://dlxy0ujatfuqf"]
+
+[ext_resource type="Script" uid="uid://ccya1kmgd4dv2" path="res://scenes/codepieces/loop_test.gd" id="1_1btpn"]
+[ext_resource type="Texture2D" uid="uid://dlu1hyrgpyem2" path="res://assets/placeholders/loop_top.png" id="1_g0r7r"]
+[ext_resource type="Texture2D" uid="uid://tvlu2sqd68h" path="res://assets/placeholders/loop_col.png" id="2_1btpn"]
+[ext_resource type="Texture2D" uid="uid://ct70035h77cp7" path="res://assets/placeholders/loop_bot.png" id="3_eeh3k"]
+
+[node name="LoopTest" type="VBoxContainer"]
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/separation = 0
+script = ExtResource("1_1btpn")
+
+[node name="LoopTop" type="TextureRect" parent="."]
+layout_mode = 2
+size_flags_horizontal = 0
+texture = ExtResource("1_g0r7r")
+
+[node name="Body" type="HBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = -3
+
+[node name="LoopCol" type="TextureRect" parent="Body"]
+layout_mode = 2
+size_flags_horizontal = 0
+texture = ExtResource("2_1btpn")
+
+[node name="CodeBlockBox" type="VBoxContainer" parent="Body"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="LoopBot" type="TextureRect" parent="."]
+layout_mode = 2
+texture = ExtResource("3_eeh3k")

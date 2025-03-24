@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://byn7a26xn3dmo"]
+
+[ext_resource type="Texture2D" uid="uid://4bs2etpf8ar" path="res://assets/placeholders/instruction.png" id="1_51tr2"]
+[ext_resource type="Script" uid="uid://dj7b7at8bkf74" path="res://scenes/codepieces/instruction_ui_block.gd" id="2_auuo5"]
+
+[node name="InstructionUIBlock" type="TextureRect"]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_51tr2")
+script = ExtResource("2_auuo5")

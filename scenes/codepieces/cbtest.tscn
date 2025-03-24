@@ -1,5 +1,0 @@
-[gd_scene format=3 uid="uid://c0ehmbd1t6x3u"]
-
-[node name="Cbtest" type="Node2D"]
-
-[node name="Extensible" type="CollisionShape2D" parent="."]

@@ -1,0 +1,54 @@
+[gd_scene load_steps=3 format=3 uid="uid://defl36gph8k4g"]
+
+[ext_resource type="PackedScene" uid="uid://dlxy0ujatfuqf" path="res://scenes/codepieces/loop_test.tscn" id="1_28je1"]
+[ext_resource type="PackedScene" uid="uid://byn7a26xn3dmo" path="res://scenes/codepieces/instruction_ui_block.tscn" id="2_rf62k"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LoopTest" parent="." instance=ExtResource("1_28je1")]
+layout_mode = 0
+offset_left = 98.0
+offset_top = 65.0
+offset_right = 524.0
+offset_bottom = 293.0
+
+[node name="LoopTest2" parent="." instance=ExtResource("1_28je1")]
+layout_mode = 0
+offset_left = 612.0
+offset_top = 59.0
+offset_right = 1038.0
+offset_bottom = 287.0
+
+[node name="InstructionUIBlock2" parent="." instance=ExtResource("2_rf62k")]
+layout_mode = 0
+offset_left = 115.0
+offset_top = 535.0
+offset_right = 422.0
+offset_bottom = 606.0
+
+[node name="InstructionUIBlock" parent="." instance=ExtResource("2_rf62k")]
+layout_mode = 0
+offset_left = 662.0
+offset_top = 433.0
+offset_right = 969.0
+offset_bottom = 504.0
+
+[node name="InstructionUIBlock3" parent="." instance=ExtResource("2_rf62k")]
+layout_mode = 0
+offset_left = 665.0
+offset_top = 528.0
+offset_right = 972.0
+offset_bottom = 599.0
+
+[node name="InstructionUIBlock4" parent="." instance=ExtResource("2_rf62k")]
+layout_mode = 0
+offset_left = 121.0
+offset_top = 429.0
+offset_right = 428.0
+offset_bottom = 500.0
