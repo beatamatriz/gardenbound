@@ -9,5 +9,3 @@
 texture = ExtResource("1_enot1")
 
 [node name="JulyBot" parent="." instance=ExtResource("2_g27li")]
-
-[node name="Camera2D" type="Camera2D" parent="."]

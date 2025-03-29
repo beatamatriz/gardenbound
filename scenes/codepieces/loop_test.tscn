@@ -1,34 +1,94 @@
-[gd_scene load_steps=5 format=3 uid="uid://dlxy0ujatfuqf"]
+[gd_scene load_steps=10 format=3 uid="uid://dlxy0ujatfuqf"]
 
 [ext_resource type="Script" uid="uid://ccya1kmgd4dv2" path="res://scenes/codepieces/loop_test.gd" id="1_1btpn"]
-[ext_resource type="Texture2D" uid="uid://dlu1hyrgpyem2" path="res://assets/placeholders/loop_top.png" id="1_g0r7r"]
-[ext_resource type="Texture2D" uid="uid://tvlu2sqd68h" path="res://assets/placeholders/loop_col.png" id="2_1btpn"]
-[ext_resource type="Texture2D" uid="uid://ct70035h77cp7" path="res://assets/placeholders/loop_bot.png" id="3_eeh3k"]
+[ext_resource type="Texture2D" uid="uid://de6dtk0nk7mw6" path="res://assets/placeholders/codeblocks/loops/head_core.png" id="2_aq0wj"]
+[ext_resource type="Texture2D" uid="uid://bst4exthrxk4j" path="res://assets/placeholders/codeblocks/loops/head_limb.png" id="3_75dlg"]
+[ext_resource type="Texture2D" uid="uid://dxjpvekc18tty" path="res://assets/placeholders/codeblocks/instructions/instruction.png" id="3_n2j8x"]
+[ext_resource type="Texture2D" uid="uid://d0673likkxh53" path="res://assets/placeholders/codeblocks/loops/head_hand.png" id="4_n2j8x"]
+[ext_resource type="Texture2D" uid="uid://bv0ml7sdf4h4i" path="res://assets/placeholders/codeblocks/loops/body_column.png" id="5_iw8h5"]
+[ext_resource type="Texture2D" uid="uid://dmegd5w362sqg" path="res://assets/placeholders/codeblocks/loops/foot_ankle.png" id="6_qu28g"]
+[ext_resource type="Texture2D" uid="uid://b0gml248yc58o" path="res://assets/placeholders/codeblocks/loops/foot_limb.png" id="7_bqm8n"]
+[ext_resource type="Texture2D" uid="uid://x1fbebdp6oa1" path="res://assets/placeholders/codeblocks/loops/foot_toe.png" id="8_tlhnc"]
 
 [node name="LoopTest" type="VBoxContainer"]
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = -1
+anchor_right = 0.115
+anchor_bottom = 0.073
+offset_right = -0.800003
+offset_bottom = 0.159996
 theme_override_constants/separation = 0
 script = ExtResource("1_1btpn")
 
-[node name="LoopTop" type="TextureRect" parent="."]
+[node name="Head" type="HBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="HeadShoulder" type="TextureRect" parent="Head"]
 layout_mode = 2
 size_flags_horizontal = 0
-texture = ExtResource("1_g0r7r")
+texture = ExtResource("2_aq0wj")
+
+[node name="CenterContainer" type="CenterContainer" parent="Head/HeadShoulder"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.9
+anchor_bottom = 0.8
+offset_left = 46.0
+offset_top = 8.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="Tab" type="Sprite2D" parent="Head/HeadShoulder"]
+position = Vector2(36.4375, 35.6875)
+scale = Vector2(0.137346, 0.791667)
+texture = ExtResource("3_n2j8x")
+
+[node name="HeadLimb" type="TextureRect" parent="Head"]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("3_75dlg")
+expand_mode = 3
+
+[node name="HeadHand" type="TextureRect" parent="Head"]
+modulate = Color(0.713726, 0.619608, 0.596078, 1)
+layout_mode = 2
+size_flags_horizontal = 0
+texture = ExtResource("4_n2j8x")
 
 [node name="Body" type="HBoxContainer" parent="."]
 layout_mode = 2
 theme_override_constants/separation = -3
 
-[node name="LoopCol" type="TextureRect" parent="Body"]
+[node name="BodyColumn" type="TextureRect" parent="Body"]
+modulate = Color(0.713726, 0.619608, 0.596078, 1)
 layout_mode = 2
 size_flags_horizontal = 0
-texture = ExtResource("2_1btpn")
+texture = ExtResource("5_iw8h5")
 
 [node name="CodeBlockBox" type="VBoxContainer" parent="Body"]
 layout_mode = 2
 theme_override_constants/separation = 0
 
-[node name="LoopBot" type="TextureRect" parent="."]
+[node name="Foot" type="HBoxContainer" parent="."]
 layout_mode = 2
-texture = ExtResource("3_eeh3k")
+theme_override_constants/separation = 0
+
+[node name="FootAnkle" type="TextureRect" parent="Foot"]
+layout_mode = 2
+texture = ExtResource("6_qu28g")
+
+[node name="Tab" type="Sprite2D" parent="Foot/FootAnkle"]
+position = Vector2(18.4375, 19.6875)
+scale = Vector2(0.137346, 0.791667)
+texture = ExtResource("3_n2j8x")
+
+[node name="FootLimb" type="TextureRect" parent="Foot"]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("7_bqm8n")
+expand_mode = 3
+
+[node name="FootToe" type="TextureRect" parent="Foot"]
+modulate = Color(0.713726, 0.619608, 0.596078, 1)
+layout_mode = 2
+texture = ExtResource("8_tlhnc")

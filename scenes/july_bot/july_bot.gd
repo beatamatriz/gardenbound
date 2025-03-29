@@ -3,6 +3,8 @@ extends CharacterBody2D
 @export var GRID_SNAP = 160
 @export var SPEED = 5.0
 
+enum InstructionName{IF, WHILE, FOR, WATER, MOVE,}
+
 var functions: Dictionary # I need to clear this in each run
 
 func _ready() -> void:
@@ -47,15 +49,12 @@ func callable_move_down(parameters) -> void:
 	print("moving down")
 	for n in range(0, 32, 1):
 		position.y += SPEED
-	
 func callable_water(parameters) -> void:
 	print("water")
-
 func callable_wait(parameters) -> void:
 	$Wait.start(parameters[0])
 	print("waiting ", parameters[0], " seconds")
 	await $Wait.timeout
-
 func callable_is_on_white(parameters) -> bool:
 	return snappedi(position.x, 160)/160 % 2 == 0 and snappedi(position.y, 160)/160 % 2 == 0
 

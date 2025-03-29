@@ -1,10 +1,13 @@
 [gd_scene load_steps=3 format=3 uid="uid://byn7a26xn3dmo"]
 
-[ext_resource type="Texture2D" uid="uid://4bs2etpf8ar" path="res://assets/placeholders/instruction.png" id="1_51tr2"]
+[ext_resource type="Texture2D" uid="uid://dxjpvekc18tty" path="res://assets/placeholders/codeblocks/instructions/instruction.png" id="1_auuo5"]
 [ext_resource type="Script" uid="uid://dj7b7at8bkf74" path="res://scenes/codepieces/instruction_ui_block.gd" id="2_auuo5"]
 
 [node name="InstructionUIBlock" type="TextureRect"]
-offset_right = 40.0
-offset_bottom = 40.0
-texture = ExtResource("1_51tr2")
+anchors_preset = -1
+anchor_right = 0.042
+anchor_bottom = 0.019
+offset_right = 0.359993
+offset_bottom = 0.48
+texture = ExtResource("1_auuo5")
 script = ExtResource("2_auuo5")
