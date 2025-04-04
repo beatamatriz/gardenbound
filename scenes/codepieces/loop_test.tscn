@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://ccya1kmgd4dv2" path="res://scenes/codepieces/loop_test.gd" id="1_1btpn"]
 [ext_resource type="Texture2D" uid="uid://de6dtk0nk7mw6" path="res://assets/placeholders/codeblocks/loops/head_core.png" id="2_aq0wj"]
 [ext_resource type="Texture2D" uid="uid://bst4exthrxk4j" path="res://assets/placeholders/codeblocks/loops/head_limb.png" id="3_75dlg"]
-[ext_resource type="Texture2D" uid="uid://dxjpvekc18tty" path="res://assets/placeholders/codeblocks/instructions/instruction.png" id="3_n2j8x"]
+[ext_resource type="Texture2D" uid="uid://c1ws36a4iydgb" path="res://assets/placeholders/codeblocks/loops/tab.png" id="3_n2j8x"]
 [ext_resource type="Texture2D" uid="uid://d0673likkxh53" path="res://assets/placeholders/codeblocks/loops/head_hand.png" id="4_n2j8x"]
 [ext_resource type="Texture2D" uid="uid://bv0ml7sdf4h4i" path="res://assets/placeholders/codeblocks/loops/body_column.png" id="5_iw8h5"]
 [ext_resource type="Texture2D" uid="uid://dmegd5w362sqg" path="res://assets/placeholders/codeblocks/loops/foot_ankle.png" id="6_qu28g"]
@@ -15,7 +15,7 @@ anchors_preset = -1
 anchor_right = 0.115
 anchor_bottom = 0.073
 offset_right = -0.800003
-offset_bottom = 0.159996
+offset_bottom = 6.16
 theme_override_constants/separation = 0
 script = ExtResource("1_1btpn")
 
@@ -39,8 +39,7 @@ grow_horizontal = 0
 grow_vertical = 0
 
 [node name="Tab" type="Sprite2D" parent="Head/HeadShoulder"]
-position = Vector2(36.4375, 35.6875)
-scale = Vector2(0.137346, 0.791667)
+position = Vector2(33, 38)
 texture = ExtResource("3_n2j8x")
 
 [node name="HeadLimb" type="TextureRect" parent="Head"]
@@ -57,7 +56,7 @@ texture = ExtResource("4_n2j8x")
 
 [node name="Body" type="HBoxContainer" parent="."]
 layout_mode = 2
-theme_override_constants/separation = -3
+theme_override_constants/separation = 0
 
 [node name="BodyColumn" type="TextureRect" parent="Body"]
 modulate = Color(0.713726, 0.619608, 0.596078, 1)
@@ -78,8 +77,7 @@ layout_mode = 2
 texture = ExtResource("6_qu28g")
 
 [node name="Tab" type="Sprite2D" parent="Foot/FootAnkle"]
-position = Vector2(18.4375, 19.6875)
-scale = Vector2(0.137346, 0.791667)
+position = Vector2(13, 20)
 texture = ExtResource("3_n2j8x")
 
 [node name="FootLimb" type="TextureRect" parent="Foot"]

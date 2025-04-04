@@ -1,4 +1,4 @@
-extends TextureRect
+extends HBoxContainer
 
 	
 func create_preview():

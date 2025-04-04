@@ -3,8 +3,6 @@ extends CharacterBody2D
 @export var GRID_SNAP = 160
 @export var SPEED = 5.0
 
-enum InstructionName{IF, WHILE, FOR, WATER, MOVE,}
-
 var functions: Dictionary # I need to clear this in each run
 
 func _ready() -> void:
