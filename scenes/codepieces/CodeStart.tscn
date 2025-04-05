@@ -1,0 +1,64 @@
+[gd_scene load_steps=11 format=3 uid="uid://ouwl27833p1o"]
+
+[ext_resource type="Script" uid="uid://2v1qyi85ttre" path="res://scenes/codepieces/code_start.gd" id="1_x4gr2"]
+[ext_resource type="Texture2D" uid="uid://co33vfi4vuah8" path="res://assets/placeholders/codeblocks/start/start_shoulder.png" id="2_wtxix"]
+[ext_resource type="Texture2D" uid="uid://6ma35mlcawop" path="res://assets/placeholders/codeblocks/start/start_limb.png" id="2_x4gr2"]
+[ext_resource type="Texture2D" uid="uid://bly66rkiftlkm" path="res://assets/placeholders/codeblocks/start/-e-start_button.png" id="3_77kwg"]
+[ext_resource type="Texture2D" uid="uid://dhaeq6hw3haph" path="res://assets/placeholders/codeblocks/start/start_hand.png" id="3_wtxix"]
+[ext_resource type="Texture2D" uid="uid://d3sh88txwnyhk" path="res://assets/placeholders/codeblocks/start/-e-start_button_pressed.png" id="4_2mbt0"]
+[ext_resource type="Texture2D" uid="uid://do0p0f62fnkna" path="res://assets/placeholders/codeblocks/start/start_tab.png" id="4_7vod3"]
+[ext_resource type="Texture2D" uid="uid://x2i54tvwchuc" path="res://assets/placeholders/codeblocks/start/-e-start_button_hover.png" id="5_cy4k2"]
+[ext_resource type="Texture2D" uid="uid://4y5i03fheweq" path="res://assets/placeholders/codeblocks/start/-e-start_button_disabled.png" id="6_olooi"]
+[ext_resource type="Texture2D" uid="uid://3kdeaxyueimf" path="res://assets/placeholders/codeblocks/empty_spacer.png" id="6_wtxix"]
+
+[node name="CodeStart" type="VBoxContainer"]
+anchors_preset = -1
+anchor_right = 0.102
+anchor_bottom = 0.061
+offset_right = 0.159988
+offset_bottom = 543.12
+size_flags_vertical = 3
+theme_override_constants/separation = 0
+script = ExtResource("1_x4gr2")
+
+[node name="Header" type="HBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="StartShoulder" type="TextureRect" parent="Header"]
+layout_mode = 2
+texture = ExtResource("2_wtxix")
+
+[node name="RunButton" type="TextureButton" parent="Header/StartShoulder"]
+layout_mode = 0
+offset_left = 31.0
+offset_top = 11.0
+offset_right = 50.0
+offset_bottom = 29.0
+texture_normal = ExtResource("3_77kwg")
+texture_pressed = ExtResource("4_2mbt0")
+texture_hover = ExtResource("5_cy4k2")
+texture_disabled = ExtResource("6_olooi")
+
+[node name="StartLimb" type="TextureRect" parent="Header"]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("2_x4gr2")
+
+[node name="StartHand" type="TextureRect" parent="Header"]
+layout_mode = 2
+texture = ExtResource("3_wtxix")
+
+[node name="StartTab" type="Sprite2D" parent="Header"]
+position = Vector2(13, 47)
+texture = ExtResource("4_7vod3")
+
+[node name="CodeBlockBox" type="VBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="EmptySpacer" type="TextureRect" parent="."]
+layout_mode = 2
+texture = ExtResource("6_wtxix")
+
+[connection signal="pressed" from="Header/StartShoulder/RunButton" to="." method="_on_texture_button_pressed"]

@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://cydrvdohl7dmg"]
+
+[ext_resource type="Texture2D" uid="uid://c67gxdgvw4i0r" path="res://assets/placeholders/codeblocks/instructions/sensor.png" id="1_0fwtk"]
+[ext_resource type="Script" uid="uid://7p7e26bh5s8y" path="res://scenes/codepieces/sensor.gd" id="2_udhva"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_udhva"]
+font_color = Color(0.247059, 0.0117647, 0.25098, 1)
+
+[node name="Sensor" type="TextureRect"]
+offset_right = 81.0
+offset_bottom = 21.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource("1_0fwtk")
+script = ExtResource("2_udhva")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 23.0
+offset_top = -3.0
+offset_right = 67.0
+offset_bottom = 20.0
+label_settings = SubResource("LabelSettings_udhva")

@@ -1,0 +1,65 @@
+[gd_scene load_steps=5 format=3 uid="uid://defl36gph8k4g"]
+
+[ext_resource type="Texture2D" uid="uid://effsink5i165" path="res://assets/placeholders/scratch_ui.png" id="1_ftc40"]
+[ext_resource type="PackedScene" uid="uid://bhb8o5ywcrlek" path="res://scenes/tests/TestingBoard.tscn" id="2_x8ubo"]
+[ext_resource type="PackedScene" uid="uid://dlxy0ujatfuqf" path="res://scenes/codepieces/WhileBlock.tscn" id="3_c5abx"]
+[ext_resource type="PackedScene" uid="uid://byn7a26xn3dmo" path="res://scenes/codepieces/InstructionBlock.tscn" id="4_rn4nr"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchor_right = 0.507
+anchor_bottom = 0.519
+offset_right = -3.44006
+offset_bottom = 136.48
+
+[node name="Control" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ScratchUi" type="Sprite2D" parent="."]
+position = Vector2(963, 535)
+scale = Vector2(1.1716, 1.1716)
+texture = ExtResource("1_ftc40")
+metadata/_edit_lock_ = true
+
+[node name="TestingBoard" parent="." instance=ExtResource("2_x8ubo")]
+position = Vector2(1638, 252)
+scale = Vector2(0.365, 0.365)
+
+[node name="CodePiecesPanel" type="PanelContainer" parent="."]
+layout_mode = 2
+offset_left = 77.0
+offset_top = 91.0
+offset_right = 376.0
+offset_bottom = 1063.0
+
+[node name="VBox" type="VBoxContainer" parent="CodePiecesPanel"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 25
+
+[node name="LoopTest" parent="CodePiecesPanel/VBox" instance=ExtResource("3_c5abx")]
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="LoopTest2" parent="CodePiecesPanel/VBox" instance=ExtResource("3_c5abx")]
+layout_mode = 2
+
+[node name="InstructionUIBlock3" parent="CodePiecesPanel/VBox" instance=ExtResource("4_rn4nr")]
+layout_mode = 2
+
+[node name="InstructionUIBlock4" parent="CodePiecesPanel/VBox" instance=ExtResource("4_rn4nr")]
+layout_mode = 2
+
+[node name="InstructionUIBlock5" parent="CodePiecesPanel/VBox" instance=ExtResource("4_rn4nr")]
+layout_mode = 2
+
+[node name="InstructionUIBlock6" parent="CodePiecesPanel/VBox" instance=ExtResource("4_rn4nr")]
+layout_mode = 2
+
+[node name="PanelContainer2" type="PanelContainer" parent="."]
+layout_mode = 2
+offset_left = 385.0
+offset_right = 1326.0
+offset_bottom = 1074.0

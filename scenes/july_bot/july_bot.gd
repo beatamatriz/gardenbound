@@ -60,52 +60,37 @@ func callable_is_on_white(parameters) -> bool:
 func parse(code_string: Array) -> Array[Instruction]:
 	var code_block: Array[Instruction]
 	for line in code_string:
-		if line[0] == "function_define":
+		if line[0] == Syntax.InstructionName.FUNCTION_DEFINE:
 			functions.get_or_add(line[1], [line[2], line[3]])
-		elif line[0] == "function_call":
+		elif line[0] == Syntax.InstructionName.FUNCTION_CALL:
 			pass # Vamos a no preocuparnos ahora mismo
-		elif line[0] == "if":
+		elif line[0] == Syntax.InstructionName.IF:
 			code_block.append(If.new(callable_if, parse([line[1]])[0], parse(line[2]), parse(line[3])))
-		elif line[0] == "for":
+		elif line[0] == Syntax.InstructionName.FOR:
 			code_block.append(For.new(callable_for, line[1], line[2], line[3], parse(line[4])))
-		elif line[0] == "while":
+		elif line[0] == Syntax.InstructionName.WHILE:
 			code_block.append(While.new(callable_while, parse([line[1]])[0], parse(line[2])))
-		elif line[0] == "water":
+		elif line[0] == Syntax.InstructionName.WATER:
 			code_block.append(Instruction.new(callable_water,[]))
-		elif line[0] == "move_left":
+		elif line[0] == Syntax.InstructionName.MOVE_LEFT:
 			code_block.append(Instruction.new(callable_move_left, []))
-		elif line[0] == "move_right":
+		elif line[0] == Syntax.InstructionName.MOVE_RIGHT:
 			code_block.append(Instruction.new(callable_move_right, []))
-		elif line[0] == "move_up":
+		elif line[0] == Syntax.InstructionName.MOVE_UP:
 			code_block.append(Instruction.new(callable_move_up, []))
-		elif line[0] == "move_down":
+		elif line[0] == Syntax.InstructionName.MOVE_DOWN:
 			code_block.append(Instruction.new(callable_move_down, []))
-		elif line[0] == "wait":
-			code_block.append(Instruction.new(callable_wait, [line[1]]))
-		elif line[0] == "is_on_white":
+		elif line[0] == Syntax.InstructionName.WAIT:
+			code_block.append(Instruction.new(callable_wait, line[1]))
+		elif line[0] == Syntax.InstructionName.IS_ON_WHITE:
 			code_block.append(Instruction.new(callable_is_on_white, []))
 			
 	return code_block
 
-func run_code() -> void:
+func run_code(code: Array) -> void:
 	print("compiling...")
-	var code_block = parse(
-	[["while", ["is_on_white"],
-	[
-		["move_right"],
-		["wait", 1],
-		["move_up"],
-		["wait", 1],
-		["move_left"],
-		["wait", 1],
-		["move_down"],
-		["wait", 1]
-	]]]
-	)
-	var code = Function.new(callable_function, code_block)
+	var code_block = parse(code)
+	var program = Function.new(callable_function, code_block)
 	print("executing...")
-	await code.execute()
+	await program.execute()
 	print("done")
-
-func _on_run_offset_timeout() -> void:
-	run_code()
