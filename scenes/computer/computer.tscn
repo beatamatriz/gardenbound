@@ -1,0 +1,179 @@
+[gd_scene load_steps=13 format=3 uid="uid://defl36gph8k4g"]
+
+[ext_resource type="Texture2D" uid="uid://effsink5i165" path="res://assets/placeholders/scratch_ui.png" id="1_twnhc"]
+[ext_resource type="PackedScene" uid="uid://duj2shavx58aq" path="res://scenes/garden/Garden.tscn" id="2_vabwv"]
+[ext_resource type="Script" uid="uid://ccqv7ir0or8pq" path="res://scenes/garden/garden.gd" id="3_dq7cv"]
+[ext_resource type="PackedScene" uid="uid://dlxy0ujatfuqf" path="res://scenes/codepieces/WhileBlock.tscn" id="4_6livp"]
+[ext_resource type="PackedScene" uid="uid://byn7a26xn3dmo" path="res://scenes/codepieces/InstructionBlock.tscn" id="5_7b1k7"]
+[ext_resource type="PackedScene" uid="uid://ouwl27833p1o" path="res://scenes/codepieces/CodeStart.tscn" id="6_djvcs"]
+[ext_resource type="PackedScene" uid="uid://cydrvdohl7dmg" path="res://scenes/codepieces/Sensor.tscn" id="6_vabwv"]
+[ext_resource type="Script" uid="uid://bkrxmrug4npsg" path="res://scenes/computer/coding_sheet_panel.gd" id="7_7b1k7"]
+[ext_resource type="Texture2D" uid="uid://ds3taa7en1xoh" path="res://assets/placeholders/pester_ui.png" id="8_6livp"]
+[ext_resource type="Texture2D" uid="uid://cgfn6v5fk1ufs" path="res://assets/placeholders/pesterchum.png" id="8_dq7cv"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_vabwv"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_1ug4l"]
+viewport_path = NodePath("Camera/SubViewport")
+
+[node name="Computer" type="Control"]
+layout_mode = 3
+anchor_right = 0.507
+anchor_bottom = 0.519
+offset_right = -3.44006
+offset_bottom = 136.48
+
+[node name="BackGround" type="Sprite2D" parent="."]
+modulate = Color(0, 14.365, 14.364, 0.321)
+position = Vector2(958.75, 540.75)
+scale = Vector2(1918.5, 1082.5)
+texture = SubResource("PlaceholderTexture2D_vabwv")
+
+[node name="ScratchUi" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(963, 535)
+scale = Vector2(1.1716, 1.1716)
+texture = ExtResource("1_twnhc")
+metadata/_edit_lock_ = true
+
+[node name="Camera" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Sprite2D" type="Sprite2D" parent="Camera"]
+use_parent_material = true
+position = Vector2(1546, 278)
+scale = Vector2(0.400148, 0.403759)
+texture = SubResource("ViewportTexture_1ug4l")
+
+[node name="SubViewport" type="SubViewport" parent="Camera"]
+own_world_3d = true
+msaa_2d = 2
+msaa_3d = 2
+screen_space_aa = 1
+use_taa = true
+size = Vector2i(1600, 1100)
+
+[node name="Garden" parent="Camera/SubViewport" instance=ExtResource("2_vabwv")]
+script = ExtResource("3_dq7cv")
+
+[node name="CodePiecesPanel" type="Panel" parent="."]
+layout_mode = 2
+anchor_left = 0.079
+anchor_top = 0.075
+anchor_right = 0.079
+anchor_bottom = 0.075
+offset_left = 0.369995
+offset_top = -0.275002
+offset_right = 287.37
+offset_bottom = 979.725
+
+[node name="VBox" type="VBoxContainer" parent="CodePiecesPanel"]
+layout_mode = 2
+offset_left = 53.0
+offset_top = 47.0
+offset_right = 233.0
+offset_bottom = 936.0
+size_flags_horizontal = 4
+theme_override_constants/separation = 25
+
+[node name="WhileBlock2" parent="CodePiecesPanel/VBox" instance=ExtResource("4_6livp")]
+layout_mode = 2
+
+[node name="RotateLeft" parent="CodePiecesPanel/VBox" instance=ExtResource("5_7b1k7")]
+layout_mode = 2
+
+[node name="RotateLeft2" parent="CodePiecesPanel/VBox" instance=ExtResource("5_7b1k7")]
+layout_mode = 2
+
+[node name="RotateRight" parent="CodePiecesPanel/VBox" instance=ExtResource("5_7b1k7")]
+layout_mode = 2
+instruction_name = 8
+
+[node name="RotateRight2" parent="CodePiecesPanel/VBox" instance=ExtResource("5_7b1k7")]
+layout_mode = 2
+instruction_name = 8
+
+[node name="Move" parent="CodePiecesPanel/VBox" instance=ExtResource("5_7b1k7")]
+layout_mode = 2
+instruction_name = 6
+
+[node name="Move2" parent="CodePiecesPanel/VBox" instance=ExtResource("5_7b1k7")]
+layout_mode = 2
+instruction_name = 6
+
+[node name="Move3" parent="CodePiecesPanel/VBox" instance=ExtResource("5_7b1k7")]
+layout_mode = 2
+instruction_name = 6
+
+[node name="Move4" parent="CodePiecesPanel/VBox" instance=ExtResource("5_7b1k7")]
+layout_mode = 2
+instruction_name = 6
+
+[node name="Move5" parent="CodePiecesPanel/VBox" instance=ExtResource("5_7b1k7")]
+layout_mode = 2
+instruction_name = 6
+
+[node name="Plant" parent="CodePiecesPanel/VBox" instance=ExtResource("5_7b1k7")]
+layout_mode = 2
+instruction_name = 9
+
+[node name="Water" parent="CodePiecesPanel/VBox" instance=ExtResource("5_7b1k7")]
+layout_mode = 2
+instruction_name = 10
+
+[node name="Wait" parent="CodePiecesPanel/VBox" instance=ExtResource("5_7b1k7")]
+layout_mode = 2
+instruction_name = 5
+
+[node name="Harvest" parent="CodePiecesPanel/VBox" instance=ExtResource("5_7b1k7")]
+layout_mode = 2
+instruction_name = 11
+
+[node name="Assemble" parent="CodePiecesPanel/VBox" instance=ExtResource("5_7b1k7")]
+layout_mode = 2
+instruction_name = 12
+
+[node name="SensorPot" parent="CodePiecesPanel/VBox" instance=ExtResource("6_vabwv")]
+layout_mode = 2
+sensor_name = 13
+
+[node name="CodingSheetPanel" type="Panel" parent="."]
+layout_mode = 2
+offset_left = 394.0
+offset_top = 51.0
+offset_right = 1180.0
+offset_bottom = 1032.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("7_7b1k7")
+
+[node name="CodeStart" parent="CodingSheetPanel" instance=ExtResource("6_djvcs")]
+layout_mode = 2
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 90.0
+offset_top = 78.0
+offset_right = 286.0
+offset_bottom = 149.0
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1596.5
+offset_top = 779.75
+offset_right = 1636.5
+offset_bottom = 819.75
+
+[node name="PesterUi" type="Sprite2D" parent="Control"]
+position = Vector2(-43.0001, 209.001)
+scale = Vector2(1.63172, 2.05784)
+texture = ExtResource("8_6livp")
+
+[node name="Pesterchum" type="Sprite2D" parent="Control"]
+position = Vector2(-41.5001, 210.751)
+texture = ExtResource("8_dq7cv")
+
+[connection signal="run_code" from="CodingSheetPanel/CodeStart" to="Camera/SubViewport/Garden" method="_on_code_start_run_code"]

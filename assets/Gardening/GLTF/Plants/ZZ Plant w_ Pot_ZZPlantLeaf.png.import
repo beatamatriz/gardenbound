@@ -1,0 +1,38 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://cxyp3c3gcrk5t"
+path.s3tc="res://.godot/imported/ZZ Plant w_ Pot_ZZPlantLeaf.png-8b3459b71bc5baac798ee97ff248aa16.s3tc.ctex"
+metadata={
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
+}
+generator_parameters={
+"md5": "67cc4b17b364e40a8d265133daf4cdc0"
+}
+
+[deps]
+
+source_file="res://assets/Gardening/GLTF/Plants/ZZ Plant w_ Pot_ZZPlantLeaf.png"
+dest_files=["res://.godot/imported/ZZ Plant w_ Pot_ZZPlantLeaf.png-8b3459b71bc5baac798ee97ff248aa16.s3tc.ctex"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0

@@ -11,7 +11,7 @@ func get_code():
 	return [sensor_name]
 
 func create_preview():
-	return self.duplicate()
+	return self.duplicate(2)
 
 func create_data():
 	return [self, true]

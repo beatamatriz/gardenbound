@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://fafpf76hp68e"]
+
+[ext_resource type="Script" uid="uid://cv60un0c52ydp" path="res://scenes/garden/flower_pot/flower_pot.gd" id="1_w4kcy"]
+[ext_resource type="PackedScene" uid="uid://brwsr0xjeon3b" path="res://assets/Gardening/GLTF/Empty Pots/TerracottaPot_WithSaucerM.glb" id="2_c72pd"]
+[ext_resource type="Texture2D" uid="uid://buflgvciq70cg" path="res://assets/placeholders/red_rose.png" id="2_w4kcy"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_c72pd"]
+size = Vector3(5, 30, 5)
+
+[node name="FlowerPot" type="Node3D"]
+script = ExtResource("1_w4kcy")
+
+[node name="Rose" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 14.436, 0)
+visible = false
+texture = ExtResource("2_w4kcy")
+
+[node name="TerracottaPot_WithSaucerM" parent="." instance=ExtResource("2_c72pd")]
+transform = Transform3D(60, 0, 0, 0, 60, 0, 0, 0, 60, 0, 0, 0)
+
+[node name="InteractionArea" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 15, 30)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractionArea"]
+shape = SubResource("BoxShape3D_c72pd")
+
+[connection signal="body_entered" from="InteractionArea" to="." method="_on_interaction_area_body_entered"]
+[connection signal="body_exited" from="InteractionArea" to="." method="_on_interaction_area_body_exited"]

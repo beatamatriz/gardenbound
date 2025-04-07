@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bhb8o5ywcrlek"]
 
 [ext_resource type="Texture2D" uid="uid://0ltemvwwsrcq" path="res://assets/placeholders/9izLRXB9T-2831927986.jpg" id="1_enot1"]
-[ext_resource type="PackedScene" uid="uid://c1e56bdcri2n6" path="res://scenes/july_bot/JulyBot.tscn" id="2_g27li"]
+[ext_resource type="PackedScene" uid="uid://c1e56bdcri2n6" path="res://scenes/tests/july_bot_2d/JulyBot.tscn" id="2_g27li"]
 
 [node name="TestingBoard" type="Node2D"]
 

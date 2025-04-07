@@ -1,8 +1,8 @@
 extends HBoxContainer
 
-@onready var label = $Shoulder/Label
-
 @export var instruction_name: Syntax.InstructionName
+
+@onready var label = $LimbContainer/Label
 
 var parameters = [1]
 
@@ -13,7 +13,7 @@ func get_code():
 	return [instruction_name, parameters]
 
 func create_preview():
-	return self.duplicate()
+	return self.duplicate(2)
 
 func create_data():
 	return [self, false]

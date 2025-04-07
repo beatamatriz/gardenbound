@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://bvtivtxhge6bd"]
 
-[ext_resource type="PackedScene" uid="uid://b6uce2347eonj" path="res://scenes/July/July.tscn" id="2_ngsr2"]
+[ext_resource type="PackedScene" uid="uid://b6uce2347eonj" path="res://scenes/july/July.tscn" id="2_ngsr2"]
 [ext_resource type="PackedScene" uid="uid://p0734hu433hb" path="res://assets/FBX_files/Desk.fbx" id="2_usfa5"]
 [ext_resource type="PackedScene" uid="uid://d3xvm3xenugiy" path="res://assets/FBX_files/Gaming Chair.fbx" id="3_2ut1t"]
 [ext_resource type="PackedScene" uid="uid://5wwm42on1css" path="res://assets/FBX_files/Gaming Keyboard.fbx" id="4_ptyhn"]

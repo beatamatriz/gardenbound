@@ -1,22 +1,37 @@
-[gd_scene load_steps=4 format=3 uid="uid://duj2shavx58aq"]
+[gd_scene load_steps=5 format=3 uid="uid://duj2shavx58aq"]
 
-[ext_resource type="PackedScene" uid="uid://brghqhtkkbpkq" path="res://scenes/JulyBot.tscn" id="1_dec76"]
-[ext_resource type="Texture2D" uid="uid://q25ut6g1i2v3" path="res://assets/placeholders/checkered_board.png" id="2_dec76"]
+[ext_resource type="PackedScene" uid="uid://brghqhtkkbpkq" path="res://scenes/july_bot/JulyBot.tscn" id="1_dec76"]
+[ext_resource type="Texture2D" uid="uid://dy8gwl0cuy1kl" path="res://assets/placeholders/checkered_board_with_border.png" id="2_642rf"]
+[ext_resource type="PackedScene" uid="uid://fafpf76hp68e" path="res://scenes/garden/flower_pot/FlowerPot.tscn" id="3_642rf"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xm2g2"]
-albedo_texture = ExtResource("2_dec76")
+shading_mode = 0
+diffuse_mode = 3
+specular_mode = 1
+albedo_texture = ExtResource("2_642rf")
 
 [node name="Garden" type="Node3D"]
 
-[node name="JulyBot" parent="." instance=ExtResource("1_dec76")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, 15)
-
-[node name="CSGBox3D" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0436953, 0)
-use_collision = true
-size = Vector3(300, 0.0883906, 300)
-material = SubResource("StandardMaterial3D_xm2g2")
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 208.427, 0)
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(0.829447, -0.420756, 0.367398, 0, 0.65773, 0.753254, -0.558585, -0.624784, 0.545553, 124.236, 110.871, 151.648)
-fov = 81.5625
+transform = Transform3D(0.706796, 0.408069, -0.577858, 0.000310659, 0.816676, 0.577096, 0.707417, -0.408069, 0.577096, -800, 800, 800)
+rotation_order = 0
+fov = 10.7
+
+[node name="JulyBot" parent="." instance=ExtResource("1_dec76")]
+
+[node name="Board" type="CSGBox3D" parent="."]
+use_collision = true
+size = Vector3(330, 0.088, 330)
+material = SubResource("StandardMaterial3D_xm2g2")
+
+[node name="FlowerPot" parent="." instance=ExtResource("3_642rf")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 90, 0, 120)
+
+[node name="FlowerPot2" parent="." instance=ExtResource("3_642rf")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 60, 0, 120)
+
+[node name="FlowerPot3" parent="." instance=ExtResource("3_642rf")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 30, 0, 120)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dlxy0ujatfuqf"]
+[gd_scene load_steps=12 format=3 uid="uid://dlxy0ujatfuqf"]
 
 [ext_resource type="Script" uid="uid://ccya1kmgd4dv2" path="res://scenes/codepieces/while_block.gd" id="1_1btpn"]
 [ext_resource type="Texture2D" uid="uid://ctmo36jcgf758" path="res://assets/placeholders/codeblocks/loops/while_head_shoulder.png" id="2_b56jd"]
@@ -11,12 +11,15 @@
 [ext_resource type="Texture2D" uid="uid://bnhmdii812uef" path="res://assets/placeholders/codeblocks/loops/while_foot_limb.png" id="9_fwxmo"]
 [ext_resource type="Texture2D" uid="uid://dw06x7ylf7m7y" path="res://assets/placeholders/codeblocks/loops/while_foot_toe.png" id="10_p01gw"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_b56jd"]
+
 [node name="WhileBlock" type="VBoxContainer"]
 anchors_preset = -1
-anchor_right = 0.115
-anchor_bottom = 0.073
-offset_right = -0.800003
-offset_bottom = 13.16
+anchor_right = 0.094
+anchor_bottom = 0.067
+offset_right = -0.480011
+offset_bottom = -0.360001
+size_flags_horizontal = 0
 theme_override_constants/separation = 0
 script = ExtResource("1_1btpn")
 control_name = 3
@@ -30,42 +33,36 @@ layout_mode = 2
 size_flags_horizontal = 0
 texture = ExtResource("2_b56jd")
 
-[node name="SensorSocket" type="TextureRect" parent="Head/HeadShoulder"]
-layout_mode = 0
-offset_left = 59.0
-offset_top = 7.0
-offset_right = 140.0
-offset_bottom = 28.0
-texture = ExtResource("3_b56jd")
-
-[node name="Conditional" type="CenterContainer" parent="Head/HeadShoulder"]
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 0.9
-anchor_bottom = 0.8
-offset_left = 59.0
-offset_top = 7.0
-offset_right = 14.0
-grow_horizontal = 0
-grow_vertical = 0
-
 [node name="Tab" type="Sprite2D" parent="Head/HeadShoulder"]
 position = Vector2(33, 38)
 texture = ExtResource("4_clkye")
 
 [node name="Label" type="Label" parent="Head/HeadShoulder"]
 layout_mode = 0
-offset_left = 10.0
+offset_left = 23.0
 offset_top = 4.0
-offset_right = 58.0
+offset_right = 71.0
 offset_bottom = 27.0
 text = "while:"
 
-[node name="HeadLimb" type="TextureRect" parent="Head"]
+[node name="Limb" type="PanelContainer" parent="Head"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxEmpty_b56jd")
+
+[node name="HeadLimb" type="TextureRect" parent="Head/Limb"]
 layout_mode = 2
 size_flags_horizontal = 3
+size_flags_vertical = 4
 texture = ExtResource("5_b56jd")
-expand_mode = 3
+
+[node name="SensorSocket" type="TextureRect" parent="Head/Limb"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+texture = ExtResource("3_b56jd")
 
 [node name="HeadHand" type="TextureRect" parent="Head"]
 layout_mode = 2
@@ -101,11 +98,10 @@ texture = ExtResource("4_clkye")
 layout_mode = 2
 size_flags_horizontal = 3
 texture = ExtResource("9_fwxmo")
-expand_mode = 3
 
 [node name="FootToe" type="TextureRect" parent="Foot"]
 layout_mode = 2
 texture = ExtResource("10_p01gw")
 
-[connection signal="mouse_entered" from="Head/HeadShoulder/Conditional" to="." method="_on_conditional_mouse_entered"]
-[connection signal="mouse_exited" from="Head/HeadShoulder/Conditional" to="." method="_on_conditional_mouse_exited"]
+[connection signal="mouse_entered" from="Head/Limb/SensorSocket" to="." method="_on_conditional_mouse_entered"]
+[connection signal="mouse_exited" from="Head/Limb/SensorSocket" to="." method="_on_conditional_mouse_exited"]

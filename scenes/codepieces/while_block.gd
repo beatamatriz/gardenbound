@@ -1,7 +1,7 @@
 extends VBoxContainer
 
 @onready var code_block = $Body/CodeBlockBox
-@onready var conditional = $Head/HeadShoulder/Conditional
+@onready var conditional = $Head/Limb
 
 @export var control_name: Syntax.InstructionName
 
@@ -11,7 +11,7 @@ func get_code():
 	var code = []
 	for line in code_block.get_children():
 		code.append(line.get_code())
-	return [control_name, conditional.get_children()[0].get_code(), code]
+	return [control_name, conditional.get_children()[-1].get_code(), code]
 
 func create_preview():
 	return self.duplicate(2)
