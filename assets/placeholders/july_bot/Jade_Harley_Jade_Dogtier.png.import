@@ -2,17 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://0ltemvwwsrcq"
-path.s3tc="res://.godot/imported/9izLRXB9T-2831927986.jpg-ceb42c87284541c5a635adfafd9dded0.s3tc.ctex"
+uid="uid://5hj62oqcskn8"
+path.s3tc="res://.godot/imported/Jade_Harley_Jade_Dogtier.png-9b97185a51b2eed5957e2a509537e31e.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
+generator_parameters={
+"md5": "5e06537c5246a261bc2bdff9a58ff42e"
+}
 
 [deps]
 
-source_file="res://assets/placeholders/9izLRXB9T-2831927986.jpg"
-dest_files=["res://.godot/imported/9izLRXB9T-2831927986.jpg-ceb42c87284541c5a635adfafd9dded0.s3tc.ctex"]
+source_file="res://assets/placeholders/july_bot/Jade_Harley_Jade_Dogtier.png"
+dest_files=["res://.godot/imported/Jade_Harley_Jade_Dogtier.png-9b97185a51b2eed5957e2a509537e31e.s3tc.ctex"]
 
 [params]
 

@@ -1,6 +1,6 @@
 extends HBoxContainer
 
-@onready var label = $Shoulder/Label 
+@onready var label = $Shoulder/Label
 
 @export var instruction_name: Syntax.InstructionName
 

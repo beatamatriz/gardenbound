@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ce7ilgx0uxwp6"
-path="res://.godot/imported/block.png-0d23d8f213410088a14e1415feddc70e.ctex"
+uid="uid://bwibweu4l7urn"
+path="res://.godot/imported/sensor_right.png-57119f6bbd83927b415dafd1f8dcf65d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/placeholders/block.png"
-dest_files=["res://.godot/imported/block.png-0d23d8f213410088a14e1415feddc70e.ctex"]
+source_file="res://assets/placeholders/codeblocks/sensor/sensor_right.png"
+dest_files=["res://.godot/imported/sensor_right.png-57119f6bbd83927b415dafd1f8dcf65d.ctex"]
 
 [params]
 

@@ -2,17 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://0ltemvwwsrcq"
-path.s3tc="res://.godot/imported/9izLRXB9T-2831927986.jpg-ceb42c87284541c5a635adfafd9dded0.s3tc.ctex"
+uid="uid://b0i3x7tfiq6v4"
+path.s3tc="res://.godot/imported/Jade_Harley_Jade_Casual.png-f5c7a5ed800576df8642e04089738572.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
+generator_parameters={
+"md5": "01a56c49e1335b417c970072e0a3ab69"
+}
 
 [deps]
 
-source_file="res://assets/placeholders/9izLRXB9T-2831927986.jpg"
-dest_files=["res://.godot/imported/9izLRXB9T-2831927986.jpg-ceb42c87284541c5a635adfafd9dded0.s3tc.ctex"]
+source_file="res://assets/placeholders/july_bot/Jade_Harley_Jade_Casual.png"
+dest_files=["res://.godot/imported/Jade_Harley_Jade_Casual.png-f5c7a5ed800576df8642e04089738572.s3tc.ctex"]
 
 [params]
 

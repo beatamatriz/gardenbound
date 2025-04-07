@@ -1,23 +1,42 @@
-[gd_scene load_steps=4 format=3 uid="uid://cydrvdohl7dmg"]
+[gd_scene load_steps=7 format=3 uid="uid://cydrvdohl7dmg"]
 
-[ext_resource type="Texture2D" uid="uid://c67gxdgvw4i0r" path="res://assets/placeholders/codeblocks/instructions/sensor.png" id="1_0fwtk"]
+[ext_resource type="Texture2D" uid="uid://bcy72npe8085i" path="res://assets/placeholders/codeblocks/sensor/sensor_left.png" id="2_2vsmw"]
 [ext_resource type="Script" uid="uid://7p7e26bh5s8y" path="res://scenes/codepieces/sensor.gd" id="2_udhva"]
+[ext_resource type="Texture2D" uid="uid://dpm2bx0l8bolu" path="res://assets/placeholders/codeblocks/sensor/sensor_center.png" id="3_8v44j"]
+[ext_resource type="Texture2D" uid="uid://bwibweu4l7urn" path="res://assets/placeholders/codeblocks/sensor/sensor_right.png" id="4_xkr4t"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2vsmw"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_udhva"]
 font_color = Color(0.247059, 0.0117647, 0.25098, 1)
 
-[node name="Sensor" type="TextureRect"]
-offset_right = 81.0
-offset_bottom = 21.0
+[node name="Sensor" type="HBoxContainer"]
+offset_right = 100.0
+offset_bottom = 23.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
-texture = ExtResource("1_0fwtk")
+theme_override_constants/separation = 0
 script = ExtResource("2_udhva")
 
-[node name="Label" type="Label" parent="."]
-layout_mode = 0
-offset_left = 23.0
-offset_top = -3.0
-offset_right = 67.0
-offset_bottom = 20.0
+[node name="Left" type="TextureRect" parent="."]
+layout_mode = 2
+texture = ExtResource("2_2vsmw")
+
+[node name="CenterContainer" type="PanelContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_styles/panel = SubResource("StyleBoxEmpty_2vsmw")
+
+[node name="Center" type="TextureRect" parent="CenterContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("3_8v44j")
+
+[node name="Label" type="Label" parent="CenterContainer"]
+layout_mode = 2
+text = "is_on_white()"
 label_settings = SubResource("LabelSettings_udhva")
+
+[node name="Right" type="TextureRect" parent="."]
+layout_mode = 2
+texture = ExtResource("4_xkr4t")

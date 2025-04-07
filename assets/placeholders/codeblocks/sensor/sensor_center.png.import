@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c6jpl5xa3sb8u"
-path="res://.godot/imported/hover.png-f8462c49b9d456794cb3d7e08893e878.ctex"
+uid="uid://dpm2bx0l8bolu"
+path="res://.godot/imported/sensor_center.png-8eb6cc05c95f4ce9103f61f479a45abd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/placeholders/hover.png"
-dest_files=["res://.godot/imported/hover.png-f8462c49b9d456794cb3d7e08893e878.ctex"]
+source_file="res://assets/placeholders/codeblocks/sensor/sensor_center.png"
+dest_files=["res://.godot/imported/sensor_center.png-8eb6cc05c95f4ce9103f61f479a45abd.ctex"]
 
 [params]
 

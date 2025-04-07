@@ -1,8 +1,8 @@
-extends TextureRect
+extends HBoxContainer
 
 @export var sensor_name:Syntax.InstructionName
 
-@onready var label = $Label
+@onready var label = $CenterContainer/Label
 
 func _ready():
 	label.text = Syntax.instruction_name_to_string(sensor_name)
