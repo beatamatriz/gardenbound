@@ -25,8 +25,8 @@ offset_bottom = 136.48
 
 [node name="BackGround" type="Sprite2D" parent="."]
 modulate = Color(0, 14.365, 14.364, 0.321)
-position = Vector2(958.75, 540.75)
-scale = Vector2(1918.5, 1082.5)
+position = Vector2(979.75, 540.75)
+scale = Vector2(1960.5, 1082.5)
 texture = SubResource("PlaceholderTexture2D_vabwv")
 
 [node name="ScratchUi" type="Sprite2D" parent="."]
@@ -43,8 +43,8 @@ offset_bottom = 40.0
 
 [node name="Sprite2D" type="Sprite2D" parent="Camera"]
 use_parent_material = true
-position = Vector2(1546, 278)
-scale = Vector2(0.400148, 0.403759)
+position = Vector2(1561.29, 285.483)
+scale = Vector2(0.460421, 0.464576)
 texture = SubResource("ViewportTexture_1ug4l")
 
 [node name="SubViewport" type="SubViewport" parent="Camera"]
@@ -60,14 +60,10 @@ script = ExtResource("3_dq7cv")
 
 [node name="CodePiecesPanel" type="Panel" parent="."]
 layout_mode = 2
-anchor_left = 0.079
-anchor_top = 0.075
-anchor_right = 0.079
-anchor_bottom = 0.075
-offset_left = 0.369995
-offset_top = -0.275002
-offset_right = 287.37
-offset_bottom = 979.725
+offset_left = 30.0
+offset_top = 30.0
+offset_right = 330.0
+offset_bottom = 1050.0
 
 [node name="VBox" type="VBoxContainer" parent="CodePiecesPanel"]
 layout_mode = 2
@@ -141,10 +137,10 @@ sensor_name = 13
 
 [node name="CodingSheetPanel" type="Panel" parent="."]
 layout_mode = 2
-offset_left = 394.0
-offset_top = 51.0
-offset_right = 1180.0
-offset_bottom = 1032.0
+offset_left = 360.0
+offset_top = 30.0
+offset_right = 1160.0
+offset_bottom = 1050.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("7_7b1k7")
@@ -168,12 +164,13 @@ offset_right = 1636.5
 offset_bottom = 819.75
 
 [node name="PesterUi" type="Sprite2D" parent="Control"]
-position = Vector2(-43.0001, 209.001)
-scale = Vector2(1.63172, 2.05784)
+position = Vector2(-38.5, 126.603)
+scale = Vector2(1.97849, 2.49517)
 texture = ExtResource("8_6livp")
 
 [node name="Pesterchum" type="Sprite2D" parent="Control"]
-position = Vector2(-41.5001, 210.751)
+position = Vector2(-27.5, 109.25)
+scale = Vector2(1.04257, 1.04257)
 texture = ExtResource("8_dq7cv")
 
 [connection signal="run_code" from="CodingSheetPanel/CodeStart" to="Camera/SubViewport/Garden" method="_on_code_start_run_code"]
